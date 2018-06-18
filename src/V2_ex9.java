@@ -3,6 +3,7 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
 
 public class V2_ex9 {
     public static void main(String[] args) {
@@ -24,21 +25,33 @@ public class V2_ex9 {
 //        long daysLeft = ChronoUnit.DAYS.between(today,christmas);
 //        System.out.println("Total " + daysLeft + " dagar.");
 
-        LocalDateTime now = LocalDateTime.of(2017, 9, 19, 14, 5, 0);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd HHmm");
-        System.out.println(now.format(formatter));
-        formatter = DateTimeFormatter.ofPattern("E-dd, yyyy");
-        System.out.println(now.format(formatter));
-        formatter = DateTimeFormatter.ofPattern("EEEE-dd, yyyy");
-        System.out.println(now.format(formatter));
-        formatter = DateTimeFormatter.ofPattern("dd-LLLL, yyyy");
-        System.out.println(now.format(formatter));
-        formatter = DateTimeFormatter.ofPattern("hh:mm a");
-        System.out.println(now.format(formatter));
-        formatter = DateTimeFormatter.ofPattern("yyyy/dd/m");
-        System.out.println(now.format(formatter));
-        formatter = DateTimeFormatter.ofPattern("yyyy/dd/mm");
-        System.out.println(now.format(formatter));
+//        LocalDateTime now = LocalDateTime.of(2017, 9, 19, 14, 5, 0);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd HHmm");
+//        System.out.println(now.format(formatter));
+//        formatter = DateTimeFormatter.ofPattern("E-dd, yyyy");
+//        System.out.println(now.format(formatter));
+//        formatter = DateTimeFormatter.ofPattern("EEEE-dd, yyyy");
+//        System.out.println(now.format(formatter));
+//        formatter = DateTimeFormatter.ofPattern("dd-LLLL, yyyy");
+//        System.out.println(now.format(formatter));
+//        formatter = DateTimeFormatter.ofPattern("hh:mm a");
+//        System.out.println(now.format(formatter));
+//        formatter = DateTimeFormatter.ofPattern("yyyy/dd/m");
+//        System.out.println(now.format(formatter));
+//        formatter = DateTimeFormatter.ofPattern("yyyy/dd/mm");
+//        System.out.println(now.format(formatter));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ange ditt födelsedatum (ÅÅÅÅ-MM-DD)");
+        if(sc.hasNext()){
+            sc.useDelimiter("-|\n");
+            int y = sc.nextInt();
+            int m = sc.nextInt();
+            int d = Integer.parseInt(sc.next());
+            LocalDate birthdate = LocalDate.of(y, m, d);
+            long age = ChronoUnit.YEARS.between(birthdate, LocalDate.now());
+            System.out.println("Du är " + age + " år gammal.");
+        }
 
 
     }
