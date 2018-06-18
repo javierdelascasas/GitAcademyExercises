@@ -6,5 +6,10 @@ public class V2_ex10 {
         System.out.println(ArrayHelper.minNumber(myArray));
         System.out.println(ArrayHelper.sumArray(myArray));
 
+        int[] numbers = LottoGenerator.generateNumbers();
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+
     }
 }
