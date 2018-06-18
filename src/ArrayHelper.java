@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ArrayHelper {
     // Returns max value of the array
     public static int maxNumber(int[] numbers){
@@ -26,5 +28,14 @@ public class ArrayHelper {
             sum += numbers[i];
         }
         return sum;
+    }
+    // Returns an array of random integers
+    public static int[] genRandomArray(int size, int bound){
+        Random rnd = new Random();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = rnd.nextInt(bound);
+        }
+        return array;
     }
 }
