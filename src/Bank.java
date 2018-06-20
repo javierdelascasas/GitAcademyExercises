@@ -1,14 +1,8 @@
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.time.LocalDateTime;
-
 
 public class Bank {
     public void sendMoney(int amount, String fromAccount, String toAccount) throws
             IOException {
-        String logstr = "";
 
 //Calculate the transfer cost
         int paymentCost = setPaymentCost(amount);
@@ -16,15 +10,11 @@ public class Bank {
 //Write to a log file for debugging purposes
         Logging.createLog(amount,fromAccount,toAccount,paymentCost);
         System.out.printf("Payment cost " + paymentCost);
+
 //save a receipt to disk
-        String receipt = "Bank transfer receipt\r\n" +
-                "\r\nDate: " + LocalDateTime.now() +
-                "\r\nAmount:" + amount +
-                "\r\nCost: " + paymentCost +
-                "\r\nFrom account:" + fromAccount +
-                "\r\nTo account:" + toAccount + "\r\n";
-        Files.write(Paths.get("./confirmation.txt"), receipt.getBytes(),
-                StandardOpenOption.CREATE);
+        Receipt receipt = new Receipt();
+        receipt.createReceipt(amount,paymentCost,fromAccount,toAccount);
+
 //Doing the bank transfer somehow....
     }
 
