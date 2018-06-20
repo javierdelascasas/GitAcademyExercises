@@ -10,7 +10,10 @@ public class V2_ex15 {
         }
         Car volvo = new Car(1000,wheels,doors);
         Car volvo2 = new Car(volvo);
+
         System.out.println("Din bil väger: " + volvo.getWeight());
         System.out.println("Din andra bil väger: " + volvo2.getWeight());
+
+
     }
 }
