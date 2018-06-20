@@ -5,6 +5,10 @@ public class Tire {
         this.weight = weight;
     }
 
+    public Tire(Tire tire){
+        this.weight = tire.weight;
+    }
+
     public float getWeight(){
         return weight;
     }
