@@ -1,8 +1,8 @@
 public class Tire {
     private float weight;
 
-    public Tire(){
-        this.weight = 5;
+    public Tire(float weight){
+        this.weight = weight;
     }
 
     public float getWeight(){
