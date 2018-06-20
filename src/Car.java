@@ -10,6 +10,13 @@ public class Car {
     }
 
     public float getWeight() {
-        return weight;
+        float totalWeight = this.weight;
+        for(Tire tire:this.wheels){
+            totalWeight += tire.getWeight();
+        }
+        for(Door door:this.doors){
+            totalWeight += door.getWeight();
+        }
+        return totalWeight;
     }
 }

@@ -4,4 +4,8 @@ public class Door {
     public Door(){
         this.weight = 15;
     }
+
+    public float getWeight(){
+        return weight;
+    }
 }
