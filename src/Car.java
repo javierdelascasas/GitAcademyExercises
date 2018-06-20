@@ -18,7 +18,7 @@ public class Car {
         for (int i = 0; i < car.doors.length; i++) {
             copyDoors[i] = new Door(car.doors[i].getWeight());
         }
-        this.weight = car.getChassiWeight();
+        this.weight = car.getChassisWeight();
         this.wheels = copyWheels;
         this.doors = copyDoors;
     }
@@ -34,7 +34,7 @@ public class Car {
         return totalWeight;
     }
 
-    public float getChassiWeight(){
+    public float getChassisWeight(){
         return weight;
     }
 }
