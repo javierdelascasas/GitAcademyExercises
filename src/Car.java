@@ -10,15 +10,17 @@ public class Car {
     }
 
     public Car(Car car){
-        Tire[] wheels = new Tire[car.wheels.length];
+        Tire[] copyWheels = new Tire[car.wheels.length];
         for (int i = 0; i < car.wheels.length; i++) {
-            wheels[i] = new Tire(car.wheels[i].getWeight());
+            copyWheels[i] = new Tire(car.wheels[i].getWeight());
         }
-        Door[] doors = new Door[car.doors.length];
+        Door[] copyDoors = new Door[car.doors.length];
         for (int i = 0; i < car.doors.length; i++) {
-            doors[i] = new Door(car.doors[i].getWeight());
+            copyDoors[i] = new Door(car.doors[i].getWeight());
         }
-        new Car(car.getChassiWeight(),wheels,doors);
+        this.weight = car.getChassiWeight();
+        this.wheels = copyWheels;
+        this.doors = copyDoors;
     }
 
     public float getWeight() {
