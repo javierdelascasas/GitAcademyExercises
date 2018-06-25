@@ -60,9 +60,9 @@ public class V3_ex16 {
     }
 
     public static void printAllNames(ArrayList<ArrayList<String>> names){
-        for(ArrayList list:names){
-            for( name:list){
-
+        for(ArrayList<String> list:names){
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(list.get(i));
             }
         }
     }
